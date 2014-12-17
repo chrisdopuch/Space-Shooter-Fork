@@ -1,6 +1,4 @@
-define(function () {
-
-	var Drawable = require('./Drawable');
+define(['./Drawable'], function (Drawable){
 
 	/**
 	 * Creates the Background object which will become a child of

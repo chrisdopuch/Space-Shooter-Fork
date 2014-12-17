@@ -1,6 +1,4 @@
-define(function () {
-
-	var Drawable = require('./Drawable');
+define(['./Drawable'], function (Drawable){
 
 	/**
 	 * Creates the Bullet object which the ship fires. The bullets are

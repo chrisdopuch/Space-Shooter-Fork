@@ -1,4 +1,4 @@
-define(function () {
+define(['./Bullet', './Enemy'], function (Bullet, Enemy){
 
 	/**
 	 * Custom Pool object. Holds Bullet objects to be managed to prevent
@@ -42,12 +42,12 @@ define(function () {
 		this.init = function(object) {
 			var i;
 			var bullet;
+			// var imageRepository = window.imageRepository;
 			if (object == "bullet") {
 				for ( i = 0; i < size; i++) {
 					// Initalize the object
 					bullet = new Bullet("bullet");
-					bullet.init(0,0, imageRepository.bullet.width,
-											imageRepository.bullet.height);
+					bullet.init(0,0, imageRepository.bullet.width, imageRepository.bullet.height);
 					bullet.collidableWith = "enemy";
 					bullet.type = "bullet";
 					pool[i] = bullet;
@@ -63,8 +63,7 @@ define(function () {
 			else if (object == "enemyBullet") {
 				for ( i = 0; i < size; i++) {
 					bullet = new Bullet("enemyBullet");
-					bullet.init(0,0, imageRepository.enemyBullet.width,
-											imageRepository.enemyBullet.height);
+					bullet.init(0,0, imageRepository.enemyBullet.width, imageRepository.enemyBullet.height);
 					bullet.collidableWith = "ship";
 					bullet.type = "enemyBullet";
 					pool[i] = bullet;

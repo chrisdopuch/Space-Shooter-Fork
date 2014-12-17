@@ -108,7 +108,7 @@ define(function () {
 
 			// Prevent infinite splitting
 			if (objects.length > maxObjects && level < maxLevels) {
-				if (this.nodes[0] === null) {
+				if (this.nodes[0] === null || typeof this.nodes[0] === 'undefined' ) {
 					this.split();
 				}
 

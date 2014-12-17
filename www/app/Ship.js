@@ -1,7 +1,4 @@
-define(function(){
-
-	var Drawable = require("./Drawable");
-	var Pool = require("./Pool");
+define(['./Drawable', './Pool'], function (Drawable, Pool){
 
 	/**
 	 * Create the Ship object that the player controls. The ship is
