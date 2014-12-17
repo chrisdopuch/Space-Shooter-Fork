@@ -2,9 +2,12 @@ define(function (require) {
    
     var Game = require("./Game");
     var ImageRepository = require("./ImageRepository");
+
+    /**
+     * Initialize the Game
+     */
    
-    var game = new Game();
-    window.game = game;
+    window.game = new Game();
    
     window.init = function() {
         game.init();
@@ -18,7 +21,7 @@ define(function (require) {
      * function must be a global function and cannot be within an
      * object.
      */
-    function animate() {
+    window.animate = function() {
         document.getElementById('score').innerHTML = game.playerScore;
 
         // Insert objects into quadtree
@@ -45,10 +48,12 @@ define(function (require) {
             game.enemyPool.animate();
             game.enemyBulletPool.animate();
         }
-    }
-    window.animate = animate;
+    };
 
-    function detectCollision() {
+    /**
+     * Function to detect collisions between objects in the game
+     */
+    window.detectCollision = function() {
         var objects = [];
         game.quadTree.getAllObjects(objects);
 
@@ -68,7 +73,7 @@ define(function (require) {
                 }
             }
         }
-    }
+    };
 
     // The keycodes that will be mapped when a user presses a button.
     // Original code by Doug McInnes
