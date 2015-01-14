@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         tasks: ['requirejs']
       }
     },
-    connect: {
+    server: {
       server: {
         options: {
           port: 8000,
