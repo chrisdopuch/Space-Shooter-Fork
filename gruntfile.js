@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         tasks: ['requirejs']
       }
     },
-    server: {
+    connect: {
       server: {
         options: {
           port: 8000,
@@ -46,5 +46,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   grunt.registerTask('default', ['jshint', 'requirejs']);
+  grunt.registerTask('server', ['connect']);
 
 };
